@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://oe2g0w8jhplt"]
+
+[ext_resource type="PackedScene" uid="uid://dynn84fts1ffg" path="res://personaje.tscn" id="1_8ycel"]
+[ext_resource type="Texture2D" uid="uid://dxlqmx7vbapk4" path="res://minecraft_94415.webp" id="2_nnu1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb1ak"]
+size = Vector2(1165, 103)
+
+[node name="Escenario" type="Node2D"]
+
+[node name="Personaje" parent="." instance=ExtResource("1_8ycel")]
+position = Vector2(191, 496)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(591, 367)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-9.49999, 235)
+scale = Vector2(2.59961, 0.234375)
+texture = ExtResource("2_nnu1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-7.5, 234.5)
+shape = SubResource("RectangleShape2D_kb1ak")
